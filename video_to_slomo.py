@@ -84,13 +84,13 @@ def create_video(dir):
 
 def main():
     # Check if arguments are okay
-    error = check()
-    if error:
-        print(error)
-        exit(1)
+    error = check()                                     #에러 체크
+    if error:                                           #에러가 있으면
+        print(error)                                    #에러 종류 출력
+        exit(1)                                         #종료
 
     # Create extraction folder and extract frames
-    IS_WINDOWS = 'Windows' == platform.system()
+    IS_WINDOWS = 'Windows' == platform.system()         #OS 종류가 윈도우면
     extractionDir = "tmpSuperSloMo"
     if not IS_WINDOWS:
         # Assuming UNIX-like system where "." indicates hidden directories
