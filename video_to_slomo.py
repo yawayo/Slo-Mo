@@ -94,20 +94,20 @@ def main():
     extractionDir = "tmpSuperSloMo"
     if not IS_WINDOWS:
         # Assuming UNIX-like system where "." indicates hidden directories
-        extractionDir = "." + extractionDir
-    if os.path.isdir(extractionDir):
-        rmtree(extractionDir)
-    os.mkdir(extractionDir)
-    if IS_WINDOWS:
-        FILE_ATTRIBUTE_HIDDEN = 0x02
+        extractionDir = "." + extractionDir             #숨겨진 파일 경로로 변경
+    if os.path.isdir(extractionDir):                    #이미 directory가 존재하는지 확인
+        rmtree(extractionDir)                           #존재하면 삭제
+    os.mkdir(extractionDir)                             #새로운 directory 생성
+    if IS_WINDOWS:                                      #OS가 윈도우이면
+        FILE_ATTRIBUTE_HIDDEN = 0x02                    #숨김파일
         # ctypes.windll only exists on Windows
-        ctypes.windll.kernel32.SetFileAttributesW(extractionDir, FILE_ATTRIBUTE_HIDDEN)
+        ctypes.windll.kernel32.SetFileAttributesW(extractionDir, FILE_ATTRIBUTE_HIDDEN)     #숨겨진 파일 생성
 
-    extractionPath = os.path.join(extractionDir, "input")
-    outputPath     = os.path.join(extractionDir, "output")
-    os.mkdir(extractionPath)
-    os.mkdir(outputPath)
-    error = extract_frames(args.video, extractionPath)
+    extractionPath = os.path.join(extractionDir, "input")   #새로운 경로 설정
+    outputPath     = os.path.join(extractionDir, "output")  #새로운 경로 설정
+    os.mkdir(extractionPath)                                #새로운 경로 생성
+    os.mkdir(outputPath)                                    #새로운 경로 생성
+    error = extract_frames(args.video, extractionPath)      
     if error:
         print(error)
         exit(1)
