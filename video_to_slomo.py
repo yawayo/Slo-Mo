@@ -68,9 +68,10 @@ def extract_frames(video, outDir):
 
     error = ""
     print('{} -i {} -vsync 0 -qscale:v 2 {}/%06d.jpg'.format(os.path.join(args.ffmpeg_dir, "ffmpeg"), video, outDir))
-    retn = os.system('{} -i {} -vsync 0 -qscale:v 2 {}/%06d.jpg'.format(os.path.join(args.ffmpeg_dir, "ffmpeg"), video, outDir))
+    retn = os.system('{} -i {} -vsync 0 -qscale:v 2 {}/%06d.jpg'.format(os.path.join(args.ffmpeg_dir, "ffmpeg"), video, outDir)
+    #-i a : a로 시작하는 모든 것   -vf : 현재 설치된 파일을 검증   -vsync : 모니터의 수직 동기 주파수를 지정   -qscale : 고정된 양자화 비율 사용)
     if retn:
-        error = "Error converting file:{}. Exiting.".format(video)
+        error = "파일 변환 에러:{}. Exiting.".format(video)
     return error
 
 def create_video(dir):
@@ -78,7 +79,7 @@ def create_video(dir):
     print('{} -r {} -i {}/%d.jpg -qscale:v 2 {}'.format(os.path.join(args.ffmpeg_dir, "ffmpeg"), args.fps, dir, args.output))
     retn = os.system('{} -r {} -i {}/%d.jpg -crf 17 -vcodec libx264 {}'.format(os.path.join(args.ffmpeg_dir, "ffmpeg"), args.fps, dir, args.output))
     if retn:
-        error = "Error creating output video. Exiting."
+        error = "출력 비디오 생성 에러. 종료합니다."
     return error
 
 
