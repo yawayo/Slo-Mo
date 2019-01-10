@@ -136,19 +136,19 @@ def main():
         transform = transforms.Compose([transforms.ToTensor(), normalize])
         TP = transforms.Compose([revNormalize, transforms.ToPILImage()])
 
-    # Load data
+    # 데이터 로드
     videoFrames = dataloader.Video(root=extractionPath, transform=transform)
     videoFramesloader = torch.utils.data.DataLoader(videoFrames, batch_size=args.batch_size, shuffle=False)
 
-    # Initialize model
+    # 모델 초기화
     flowComp = model.UNet(6, 4)
     flowComp.to(device)
     for param in flowComp.parameters():
-        param.requires_grad = False
+        param.requires_grad = False #학습하지 않음
     ArbTimeFlowIntrp = model.UNet(20, 5)
     ArbTimeFlowIntrp.to(device)
     for param in ArbTimeFlowIntrp.parameters():
-        param.requires_grad = False
+        param.requires_grad = False #학습하지 않음
     
     flowBackWarp = model.backWarp(videoFrames.dim[0], videoFrames.dim[1], device)
     flowBackWarp = flowBackWarp.to(device)
