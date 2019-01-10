@@ -38,6 +38,7 @@ def extract_frames(videos, inDir, outDir):
     for video in videos:
         os.mkdir(os.path.join(outDir, os.path.splitext(video)[0]))
         retn = os.system('{} -i {} -vf scale={}:{} -vsync 0 -qscale:v 2 {}/%04d.jpg'.format(os.path.join(args.ffmpeg_dir, "ffmpeg"), os.path.join(inDir, video), args.img_width, args.img_height, os.path.join(outDir, os.path.splitext(video)[0])))
+        #-i a : a로 시작하는 모든 것   -vf : 현재 설치된 파일을 검증   -vsync : 모니터의 수직 동기 주파수를 지정   -qscale : 고정된 양자화 비율 사용
         if retn:
             print("Error converting file:{}. Exiting.".format(video))
 
