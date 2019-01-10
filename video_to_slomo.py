@@ -107,9 +107,9 @@ def main():
     outputPath     = os.path.join(extractionDir, "output")  #새로운 경로 설정
     os.mkdir(extractionPath)                                #새로운 경로 생성
     os.mkdir(outputPath)                                    #새로운 경로 생성
-    error = extract_frames(args.video, extractionPath)      
-    if error:
-        print(error)
+    error = extract_frames(args.video, extractionPath)      #비디오를 읽어들이는데
+    if error:                                               #에러가 있으면
+        print(error)                                        #에러 출력
         exit(1)
 
     # Initialize transforms
