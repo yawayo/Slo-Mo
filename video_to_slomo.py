@@ -92,7 +92,7 @@ def main():
         print(error)                                    #에러 종류 출력
         exit(1)                                         #종료
 
-    # Create extraction folder and extract frames
+    #추출 폴더 생성 및 추출 프레임
     IS_WINDOWS = 'Windows' == platform.system()         #OS 종류가 윈도우면
     extractionDir = "tmpSuperSloMo"
     if not IS_WINDOWS:
@@ -115,14 +115,15 @@ def main():
         print(error)                                        #에러 출력
         exit(1)
 
-    # Initialize transforms
+    # device 설정
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+    #Nomalization
     mean = [0.429, 0.431, 0.397]
     std  = [1, 1, 1]
     normalize = transforms.Normalize(mean=mean,
                                      std=std)
-    
+    #ReNomalization
     negmean = [x * -1 for x in mean]
     revNormalize = transforms.Normalize(mean=negmean, std=std)
 
