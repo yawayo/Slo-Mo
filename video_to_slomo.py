@@ -26,7 +26,7 @@ args = parser.parse_args()
 
 def check():
     """
-    Checks the validity of commandline arguments.
+    실행 시 지정한 항목들의 유효성 검사.
 
     Parameters
     ----------
@@ -35,34 +35,34 @@ def check():
     Returns
     -------
         error : string
-            Error message if error occurs otherwise blank string.
+            오류 발생 시 오류 메시지, 그렇지 않으면 빈 문자열.
     """
 
 
     error = ""
     if (args.sf < 2):
-        error = "Error: --sf/slomo factor has to be atleast 2"
+        error = "Error: --sf/slomo factor 는 2 이상이어야 한다"
     if (args.batch_size < 1):
-        error = "Error: --batch_size has to be atleast 1"
+        error = "Error: --batch_size 는 1 이상이어야 한다"
     if (args.fps < 1):
-        error = "Error: --fps has to be atleast 1"
+        error = "Error: --fps 는 1 이상이어야 한다"
     return error
 
 def extract_frames(video, outDir):
     """
-    Converts the `video` to images.
+    비디오에서 이미지로 변환.
 
     Parameters
     ----------
         video : string
-            full path to the video file.
+            비디오 파일의 전체 경로.
         outDir : string
-            path to directory to output the extracted images.
+            추출된 이미지를 출력하기 위한 디렉터리 경로.
 
     Returns
     -------
         error : string
-            Error message if error occurs otherwise blank string.
+            오류 발생 시 오류 메시지, 그렇지 않으면 빈 문자열.
     """
 
 
