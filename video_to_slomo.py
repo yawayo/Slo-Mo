@@ -150,8 +150,8 @@ def main():
     for param in ArbTimeFlowIntrp.parameters():
         param.requires_grad = False #학습하지 않음
     
-    flowBackWarp = model.backWarp(videoFrames.dim[0], videoFrames.dim[1], device)
-    flowBackWarp = flowBackWarp.to(device)
+    flowBackWarp = model.backWarp(videoFrames.dim[0], videoFrames.dim[1], device)   #이미지의 width height
+    flowBackWarp = flowBackWarp.to(device)      #
 
     dict1 = torch.load(args.checkpoint, map_location='cpu')
     ArbTimeFlowIntrp.load_state_dict(dict1['state_dictAT'])
@@ -160,7 +160,7 @@ def main():
     # Interpolate frames
     frameCounter = 1
 
-    with torch.no_grad():
+    with torch.no_grad():   #학습하지 않음
         for _, (frame0, frame1) in enumerate(tqdm(videoFramesloader), 0):
 
             I0 = frame0.to(device)
