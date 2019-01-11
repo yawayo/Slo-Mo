@@ -52,8 +52,12 @@
 01/10 출력 width = 입력 width
 01/10 출력 height = 입력 height
 01/10 입력 fps : 각각 다 다름
-01/10 출력 fps = 25fps
+01/10 출력 fps = 설정한 fps
 
 01/10 video_to_video 코드로 여러 영상을 돌려본다.(시간이 너무 오래 걸림. 진행중)
 01/10 Slo-Mo 코드 분석(진행중)
 01/10 Slo-Mo train시키기(보류. 추후에 시간이 나면 실행)
+
+01/11 video_to_video 코드로 여러 영상을 돌려본다.(기상청 홈페이지에 있던 구름 영상도 돌려봄)
+01/11 돌린 영상(dataset에 있던 영상(5시간 소요), 기상청 구름 이미지->비디오 변환(4fps->25fps, mp4->mp4, gif->mp4))
+01/11 video_to_video 코드 분석
