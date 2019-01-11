@@ -170,12 +170,12 @@ def main():
             F_0_1 = flowOut[:,:2,:,:]
             F_1_0 = flowOut[:,2:,:,:]
 
-            # Save reference frames in output folder
+            # 출력 폴더에 참조 프레임 저장
             for batchIndex in range(args.batch_size):
                 (TP(frame0[batchIndex].detach())).resize(videoFrames.origDim, Image.BILINEAR).save(os.path.join(outputPath, str(frameCounter + args.sf * batchIndex) + ".jpg"))
             frameCounter += 1
 
-            # Generate intermediate frames
+            # 중간 프레임 생성
             for intermediateIndex in range(1, args.sf):
                 t = intermediateIndex / args.sf
                 temp = -t * (1 - t)
@@ -201,7 +201,7 @@ def main():
 
                 Ft_p = (wCoeff[0] * V_t_0 * g_I0_F_t_0_f + wCoeff[1] * V_t_1 * g_I1_F_t_1_f) / (wCoeff[0] * V_t_0 + wCoeff[1] * V_t_1)
 
-                # Save intermediate frame
+                # 중간 프레임 저장
                 for batchIndex in range(args.batch_size):
                     (TP(Ft_p[batchIndex].cpu().detach())).resize(videoFrames.origDim, Image.BILINEAR).save(os.path.join(outputPath, str(frameCounter + args.sf * batchIndex) + ".jpg"))
                 frameCounter += 1
@@ -209,10 +209,10 @@ def main():
             # Set counter accounting for batching of frames
             frameCounter += args.sf * (args.batch_size - 1)
 
-    # Generate video from interpolated frames
+    # interpolated frames으로 비디오 생성
     create_video(outputPath)
 
-    # Remove temporary files
+    # 임시 파일 제거
     rmtree(extractionDir)
 
     exit(0)
