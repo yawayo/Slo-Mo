@@ -75,3 +75,5 @@
 01/16 model 바꿔서 돌려보기(시도중)
 
 01/17 새로운 dataset으로 학습시키기 위해 dataset의 mean과 std 구하기(normalization을 위해)
+
+01/18 새로운 dataset으로 학습시키기(normalization을 위해 dtaset의 mean과 std 구하기, dataset 만들기)
