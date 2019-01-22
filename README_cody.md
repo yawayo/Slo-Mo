@@ -78,4 +78,6 @@
 
 01/18 새로운 dataset으로 학습시키기(normalization을 위해 dtaset의 mean과 std 구하기, dataset 만들기)
 
-01/19 새로운 dataset 준비하기(create_dataset.py ->ffmpeg의 permission denied -> 수작업)
+01/21 새로운 dataset 준비하기(create_dataset.py ->ffmpeg의 permission denied -> 수작업)
+
+01/22 새로운 dataset으로 training 시키기
