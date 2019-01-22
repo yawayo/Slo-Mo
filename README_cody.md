@@ -80,4 +80,6 @@
 
 01/21 새로운 dataset 준비하기(create_dataset.py ->ffmpeg의 permission denied -> 수작업)
 
-01/22 새로운 dataset으로 training 시키기
+01/22 새로운 dataset으로 training 시키기(결과 안좋음:dataset이 적어서? 적절하지 않는 dataset이라서?)
+01/22 사내 GPU 사용법 배움
+01/22 Frame interpolation과 super resolution을 합치는 방법 찾기(따로따로?)
