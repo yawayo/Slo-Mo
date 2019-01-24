@@ -88,4 +88,4 @@
 01/23 slo-mo 메모리 사용량 체크
 
 01/24 slo-mo 메모리 사용량 체크(0.14GB)
-01/24 SRCNN과 Slo-Mo 결합해본다.(0.13GB, 0.14GB)->사내 서버에서는 out of memory
+01/24 SRCNN과 Slo-Mo 결합(0.13GB, 0.14GB)(input:1024x1024x3 150장 30fps->output:2024x2024x3 300ㅏ장 60fps)->Google Colab에서는 실행이 되나 사내 서버로 video_to_slomo 실행 시 ERROR(out of memory)->미해결
