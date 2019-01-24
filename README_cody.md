@@ -85,4 +85,7 @@
 01/22 Frame interpolation과 super resolution을 합치는 방법 찾기(따로따로?)
 
 01/23 비디오를 SRCNN에 적용 후 slo-mo에 적용(결과 차이를 모르겠음)
-01/23 slo-mo 연산량 계산중
+01/23 slo-mo 메모리 사용량 체크
+
+01/24 slo-mo 메모리 사용량 체크(0.14GB)
+01/24 SRCNN과 Slo-Mo 결합해본다.(0.13GB, 0.14GB)->사내 서버에서는 out of memory
