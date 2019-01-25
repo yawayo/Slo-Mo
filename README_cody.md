@@ -89,3 +89,6 @@
 
 01/24 slo-mo 메모리 사용량 체크(0.14GB)
 01/24 SRCNN과 Slo-Mo 결합(0.13GB, 0.14GB)(input:1024x1024x3 150장 30fps->output:2024x2024x3 300ㅏ장 60fps)->Google Colab에서는 실행이 되나 사내 서버로 video_to_slomo 실행 시 ERROR(out of memory)->미해결
+
+01/25 SRCNN과 Slo-Mo 결합(out of memory->실패)
+01/25 kubeflow에 관한 공부
