@@ -92,3 +92,7 @@
 
 01/25 SRCNN과 Slo-Mo 결합(out of memory->실패)
 01/25 kubeflow에 관한 공부
+
+01/28 kubeflow에 관한 공부
+01/28 kubeflow를 직접 사용하기 위한 환경설정(가상머신이 제대로 작동 안함->노트북 사양 문제...?)
+
