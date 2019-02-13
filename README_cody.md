@@ -125,3 +125,8 @@
 02/11 Frame Interpolation PPT 만들기
 02/11 vid2vid에 사용할 dataset 전처리
 
+02/12 태양이미지 데이터셋 전처리
+02/12 영상처리 PPT 작성
+02/12 vid2vid 코드 실행(NVIDIA에서 제공한 코드로 실패, 서버에 있는 코드로는 성공)
+
+02/13 vid2vid custom dataset으로 test 시도(실패)
