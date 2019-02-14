@@ -130,3 +130,6 @@
 02/12 vid2vid 코드 실행(NVIDIA에서 제공한 코드로 실패, 서버에 있는 코드로는 성공)
 
 02/13 vid2vid custom dataset으로 test 시도(실패)
+
+02/14 AWS에서 주최한 Online conference
+02/14 vid2vid card dataset으로 test시도(실패)
