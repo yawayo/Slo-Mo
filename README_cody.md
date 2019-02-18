@@ -133,3 +133,6 @@
 
 02/14 AWS에서 주최한 Online conference
 02/14 vid2vid card dataset으로 test시도(실패)
+
+02/15 vid2vid card dataset으로 test시도(실패)
+02/15 제일 최근에 뜬 에러때문에 학습부터 다시 시키는 중
